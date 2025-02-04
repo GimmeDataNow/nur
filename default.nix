@@ -15,6 +15,8 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
+  grayjay-web = pkgs.callPackage ./pkgs/grayjay-web { };
+  grayjay-desktop = pkgs.callPackage ./pkgs/grayjay-desktop { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
