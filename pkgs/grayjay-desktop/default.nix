@@ -4,13 +4,10 @@
   fetchFromGitLab,
   internal,
   autoPatchelfHook,
-
   libz,
   icu,
   openssl,
-
   xorg,
-
   gtk3,
   glib,
   nss,
@@ -43,7 +40,7 @@ buildDotnetModule {
     fetchLFS = true;
   };
 
-  patches = [ ./launch.patch ./wwwroot.patch ];
+  patches = [./launch.patch ./wwwroot.patch];
 
   executables = "Grayjay";
 
@@ -53,14 +50,13 @@ buildDotnetModule {
   nugetDeps = ./deps.json;
   projectFile = "Grayjay.Desktop.CEF/Grayjay.Desktop.CEF.csproj";
 
-  nativeBuildInputs = [ autoPatchelfHook ];
+  nativeBuildInputs = [autoPatchelfHook];
 
   postInstall = ''
     mkdir -p $out/lib/grayjay-desktop/wwwroot
     ln -s ${internal.grayjay-web} $out/lib/grayjay-desktop/wwwroot/web
     rm $out/lib/grayjay-desktop/Portable
   '';
-  
 
   dontAutoPatchelf = true;
   preFixup = ''

@@ -1,4 +1,8 @@
-{ buildNpmPackage, internal, ... }:
+{
+  buildNpmPackage,
+  internal,
+  ...
+}:
 buildNpmPackage {
   inherit (internal.grayjay-desktop) version;
   pname = "grayjay-desktop-web";
